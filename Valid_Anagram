@@ -1,0 +1,17 @@
+class Solution:
+    def isAnagram( s: str, t: str) :
+        isFound = False
+        counter1 = 0
+        print(s(1))
+        while counter1 < len(s) and isFound == True :
+            if s[counter1] in t:
+                isFound = True
+            else:
+                isFound = False
+
+        return isFound
+            
+                
+s = "ball"
+t = "lbal"
+print(Solution().isAnagram(s,t))
