@@ -1,17 +1,20 @@
 class Solution:
     def isAnagram( s: str, t: str) :
-        isFound = False
-        counter1 = 0
-        print(s(1))
-        while counter1 < len(s) and isFound == True :
-            if s[counter1] in t:
-                isFound = True
-            else:
-                isFound = False
+        if (len(s) !=  len(t)):
+            return False
+        
+        hashS = {}
+        hashT = {}
+        
+        for i in range (len(s)):
+            hashS[s[i]] = 1 + hashS.get(s[i],0)
+            hashT[t[i]] = 1 + hashT.get(t[i],0)
 
-        return isFound
-            
-                
-s = "ball"
-t = "lbal"
-print(Solution().isAnagram(s,t))
+        for c in hashS:
+            if hashS[c] != hashT.get(c,0):
+                return False
+        
+        return True
+    
+
+    
