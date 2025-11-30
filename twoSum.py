@@ -8,7 +8,6 @@ class Solution:
         
         for i in range (len(nums)):
             diff = target - nums[i]
-            print(diff)
             if (diff in hash):
                 if ( i != hash.get(diff)): 
                     return [i,hash.get(diff)]
